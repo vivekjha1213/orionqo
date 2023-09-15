@@ -104,8 +104,8 @@ class AddPrescriptionDetails extends Component {
                                                 </Col>
                                                 <Col md="6">
                                                     <div className="mb-3 position-relative">
-                                                        <Label className="form-label" htmlFor="validationTooltip01">Medicine</Label>
-                                                        <Input type="text" className="form-control" id="validationTooltip01" name="medicine" placeholder="Medicine" onChange={this.handleChange} required/>
+                                                        <Label className="form-label" htmlFor="validationTooltip01">Medicine ID</Label>
+                                                        <Input type="text" className="form-control" id="validationTooltip01" name="medicine" placeholder="Medicine ID" onChange={this.handleChange} required/>
                                                         <div className="valid-tooltip">
                                                             Looks good!
                                                         </div>
@@ -128,7 +128,7 @@ class AddPrescriptionDetails extends Component {
                                                 <Col md="6">
                                                     <div className="mb-3 position-relative">
                                                         <Label className="form-label" htmlFor="validationTooltip04">Frequency</Label>
-                                                        <Input type="text" className="form-control" id="validationTooltip04" name="frequency" placeholder="Frequency" onChange={this.handleChange} required/>
+                                                        <Input type="text" className="form-control" id="validationTooltip04" name="frequency" placeholder="No. of time in words" onChange={this.handleChange} required/>
                                                         <div className="valid-tooltip">
                                                             Looks good!
                                                         </div>

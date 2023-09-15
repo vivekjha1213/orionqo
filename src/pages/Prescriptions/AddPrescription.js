@@ -18,6 +18,7 @@ class AddPrescription extends Component {
             notes: "",
             client:"",
             access_token:"",
+            prescription_time: "",
 
         };
     }
@@ -47,6 +48,7 @@ class AddPrescription extends Component {
           notes,
           client,
           access_token,
+          prescription_time,
         } = this.state;
       
         try {
@@ -54,8 +56,10 @@ class AddPrescription extends Component {
             patient,
             doctor,
             prescription_date,
+            prescription_time,
             notes,
             client,
+            
           }, {
             headers: {
               "Content-Type": "application/json",
@@ -91,7 +95,7 @@ class AddPrescription extends Component {
                                     <CardBody>
                                         <Form className="needs-validation" method="post" id="tooltipForm" onSubmit={this.handleSubmit}>
                                             <Row>
-                                                <Col md="6">
+                                                <Col md="4">
                                                     <div className="mb-3 position-relative">
                                                         <Label className="form-label" htmlFor="validationTooltip01">Pateint ID</Label>
                                                         <Input type="text" className="form-control" id="validationTooltip01" name="patient" placeholder="Patient ID" onChange={this.handleChange} />
@@ -100,7 +104,7 @@ class AddPrescription extends Component {
                                                         </div>
                                                     </div>
                                                 </Col>
-                                                <Col md="6">
+                                                <Col md="4">
                                                     <div className="mb-3 position-relative">
                                                         <Label className="form-label" htmlFor="validationTooltip01">Doctor ID</Label>
                                                         <Input type="text" className="form-control" id="validationTooltip01" name="doctor" placeholder="Doctor ID" onChange={this.handleChange} />
@@ -109,14 +113,22 @@ class AddPrescription extends Component {
                                                         </div>
                                                     </div>
                                                 </Col>
-                                                
+                                                <Col md="4">
+                                                    <div className="mb-3 position-relative">
+                                                        <Label className="form-label" htmlFor="validationTooltip02">Prescription Date</Label>
+                                                        <Input type="text" className="form-control" id="validationTooltip02" name="prescription_date" placeholder="Date format i.e yyyy-mm-dd" onChange={this.handleChange} />
+                                                        <div className="valid-tooltip">
+                                                            Looks good!
+                                                        </div>
+                                                    </div>
+                                                </Col>
                                             </Row>
 
                                             <Row>
                                                 <Col md="6">
                                                     <div className="mb-3 position-relative">
-                                                        <Label className="form-label" htmlFor="validationTooltip02">Prescription Date</Label>
-                                                        <Input type="text" className="form-control" id="validationTooltip02" name="prescription_date" placeholder="Date format i.e yyyy-mm-dd" onChange={this.handleChange} />
+                                                        <Label className="form-label" htmlFor="validationTooltip02">Prescription Time</Label>
+                                                        <Input type="text" className="form-control" id="validationTooltip02" name="prescription_time" placeholder="Time format i.e hr:mn:sec" onChange={this.handleChange} />
                                                         <div className="valid-tooltip">
                                                             Looks good!
                                                         </div>

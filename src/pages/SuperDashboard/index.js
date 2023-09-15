@@ -14,7 +14,6 @@ import Sources from "./Sources";
 import RecentlyActivity from "./RecentlyActivity";
 import RevenueByLocations from "./RevenueByLocations";
 import ChatBox from "./ChatBox";
-import Appointments from "./Appointments";
 
 import { toast } from 'react-toastify'; // Import toast from react-toastify
 import axios from 'axios';
