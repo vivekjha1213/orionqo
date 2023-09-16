@@ -63,7 +63,7 @@ class Invoices extends Component {
 
         try {
           const { client_id,sortOrder} = this.state;
-          const response = await axios.post(`http://194.163.40.231:8080/Invoice/details/`, { client_id }, {
+          const response = await axios.post(`/Invoice/details/`, { client_id }, {
             headers: {
               "Content-Type": "application/json", // Set the content type to JSON
               'Authorization': `Bearer ${acces}`,
@@ -112,7 +112,7 @@ class Invoices extends Component {
       deleteInvoice = async (invoice_id, client_id, access_token) => {
         try {
           const response = await axios.post(
-            `http://194.163.40.231:8080/Invoice/delete-By/`,
+            `/Invoice/delete-By/`,
             { invoice_id, client_id },
             {
               headers: {

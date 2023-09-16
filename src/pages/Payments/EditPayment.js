@@ -38,7 +38,7 @@ class EditPayment extends Component {
           
 
         try {
-            const response = await fetch(`http://194.163.40.231:8080/Payment/details-By/`,{
+            const response = await fetch(`/Payment/details-By/`,{
                 method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -86,7 +86,7 @@ class EditPayment extends Component {
         } = this.state;
       
         try {
-          const response = await axios.put(`http://194.163.40.231:8080/Payment/Updated/`, {
+          const response = await axios.put(`/Payment/Updated/`, {
             invoice,
             payment_date,
             amount,

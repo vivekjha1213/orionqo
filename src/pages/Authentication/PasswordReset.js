@@ -31,7 +31,7 @@ class PasswordReset extends Component {
       
         try {
           const response = await axios.post(
-            `http://194.163.40.231:8080/Hospital/reset-password/${uid}/${token}/`,
+            `/Hospital/reset-password/${uid}/${token}/`,
             {
               password,
               password2,

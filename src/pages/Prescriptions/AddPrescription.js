@@ -52,7 +52,7 @@ class AddPrescription extends Component {
         } = this.state;
       
         try {
-          const response = await axios.post("http://194.163.40.231:8080/Prescription/add/", {
+          const response = await axios.post("/Prescription/add/", {
             patient,
             doctor,
             prescription_date,

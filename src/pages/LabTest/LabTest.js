@@ -66,7 +66,7 @@ class LabTest extends Component {
 
         try {
           const { client_id} = this.state;
-          const response = await axios.post(`http://194.163.40.231:8080/LabTest/details/`, { client_id }, {
+          const response = await axios.post(`/LabTest/details/`, { client_id }, {
             headers: {
               "Content-Type": "application/json", // Set the content type to JSON,
               'Authorization': `Bearer ${acces}`,
@@ -116,7 +116,7 @@ class LabTest extends Component {
       deleteLabTest = async (lab_test_id, client_id, access_token) => {
         try {
           const response = await axios.post(
-            `http://194.163.40.231:8080/LabTest/delete-By/`,
+            `/LabTest/delete-By/`,
             { lab_test_id, client_id },
             {
               headers: {

@@ -60,7 +60,7 @@ class Doctors extends Component {
 
         try {
             const { client_id, sortOrder } = this.state;
-            const response = await axios.post(`http://194.163.40.231:8080/Doctor/details/`, { client_id }, {
+            const response = await axios.post(`/Doctor/details/`, { client_id }, {
                 headers: {
                     "Content-Type": "application/json", // Set the content type to JSON
                     'Authorization': `Bearer ${acces}`,
@@ -106,7 +106,7 @@ class Doctors extends Component {
       deleteDoctor = async (doctor_id, client_id, access_token) => {
         try {
           await axios.post(
-            'http://194.163.40.231:8080/Doctor/deleteBy/',
+            '/Doctor/deleteBy/',
             { doctor_id, client_id },
             {
               headers: {

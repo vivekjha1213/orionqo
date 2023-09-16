@@ -57,7 +57,7 @@ class Hospitals extends Component {
     getAllHospitals = async () => {
         try {
             const acces = this.state.access_token;
-            const response = await fetch("http://194.163.40.231:8080/Hospital/list/", {
+            const response = await fetch("/Hospital/list/", {
                 headers: {
                     'Authorization': `Bearer ${acces}`
                 }
@@ -84,7 +84,7 @@ class Hospitals extends Component {
     
         if (confirmDelete) {
             try {
-                const response = await fetch(`http://194.163.40.231:8080/Hospital/delete/${client_id}`, {
+                const response = await fetch(`/Hospital/delete/${client_id}`, {
                     method: "DELETE",
                     headers: {
                         "Content-Type": "application/json",

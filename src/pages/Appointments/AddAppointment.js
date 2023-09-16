@@ -108,7 +108,7 @@ class AddAppointment extends Component {
     const { client_id } = this.state;
 
     try {
-      const response = await axios.post(`http://194.163.40.231:8080/Patient/details/`, { client_id }, {
+      const response = await axios.post(`/Patient/details/`, { client_id }, {
         headers: {
           "Content-Type": "application/json",
           'Authorization': `Bearer ${this.state.access_token}`,
@@ -138,7 +138,7 @@ class AddAppointment extends Component {
     const { client_id } = this.state;
 
     try {
-      const response = await axios.post(`http://194.163.40.231:8080/Doctor/details/`, { client_id }, {
+      const response = await axios.post(`/Doctor/details/`, { client_id }, {
         headers: {
           "Content-Type": "application/json",
           'Authorization': `Bearer ${this.state.access_token}`,
@@ -235,7 +235,7 @@ handleSubmit = async (e) => {
   };
 
   try {
-    const response = await axios.post(`http://194.163.40.231:8080/Appointment/book/`, formData, {
+    const response = await axios.post(`/Appointment/book/`, formData, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${acces}`

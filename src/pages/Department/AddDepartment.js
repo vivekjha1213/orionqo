@@ -51,7 +51,7 @@ class AddDepartment extends Component {
     access_token,
 } = this.state;
         try {
-            const response = await fetch("http://194.163.40.231:8080/Nurse/add/", {
+            const response = await fetch("/Nurse/add/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

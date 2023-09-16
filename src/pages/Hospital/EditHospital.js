@@ -34,7 +34,7 @@ class EditHospital extends Component {
             this.setState({ access_token: access });
           }
       
-          const response = await fetch(`http://194.163.40.231:8080/Hospital/list/${client_id}/`, {
+          const response = await fetch(`/Hospital/list/${client_id}/`, {
             headers: {
               'Authorization': `Bearer ${access}`
             }
@@ -86,7 +86,7 @@ class EditHospital extends Component {
         };
     
         try {
-          const response = await axios.put(`http://194.163.40.231:8080/Hospital/update/${client_id}/`, formData, {
+          const response = await axios.put(`/Hospital/update/${client_id}/`, formData, {
             headers: {
               'Content-Type': 'application/json',
             },

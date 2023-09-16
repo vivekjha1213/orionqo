@@ -47,7 +47,7 @@ class AddPayment extends Component {
         } = this.state;
       
         try {
-          const response = await axios.post("http://194.163.40.231:8080/Payment/add/", {
+          const response = await axios.post("/Payment/add/", {
             invoice,
             payment_date,
             amount,

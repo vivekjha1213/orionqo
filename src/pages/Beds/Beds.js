@@ -110,7 +110,7 @@ class Beds extends Component {
       deleteBed = async (bed_id, department_id, client_id, access_token) => {
         try {
           const response = await axios.post(
-            `http://194.163.40.231:8080/Bed/deleteBy/`,
+            `/Bed/deleteBy/`,
             { client_id, department_id, bed_id },
             {
               headers: {

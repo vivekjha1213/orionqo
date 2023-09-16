@@ -32,7 +32,7 @@ class EditInvoice extends Component {
           
 
         try {
-            const response = await fetch(`http://194.163.40.231:8080/Invoice/details-By/`,{
+            const response = await fetch(`/Invoice/details-By/`,{
                 method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -88,7 +88,7 @@ class EditInvoice extends Component {
         };
     
         try {
-          const response = await axios.put(`http://194.163.40.231:8080/Invoice/Updated/`, formData, {
+          const response = await axios.put(`/Invoice/Updated/`, formData, {
             headers: {
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${access_token}`,

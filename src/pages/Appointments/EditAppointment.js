@@ -70,7 +70,7 @@ class EditAppointment extends Component {
   };
 
   try {
-    const response = await axios.put(`http://194.163.40.231:8080/Appointment/updateBy/`, formData, {
+    const response = await axios.put(`/Appointment/updateBy/`, formData, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${access_token}`,

@@ -20,7 +20,7 @@ class Counter3 extends Component {
     }
 
     try {
-      const hospitalResponse = await fetch('http://194.163.40.231:8080/Hospital/list/', {
+      const hospitalResponse = await fetch('/Hospital/list/', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

@@ -56,7 +56,7 @@ class Medicines extends Component {
 
         try {
             const { client_id} = this.state;
-            const response = await axios.post(`http://194.163.40.231:8080/Medicine/details/`, { client_id }, {
+            const response = await axios.post(`/Medicine/details/`, { client_id }, {
               headers: {
                 "Content-Type": "application/json", // Set the content type to JSON
                 'Authorization': `Bearer ${acces}`,
@@ -94,7 +94,7 @@ class Medicines extends Component {
       
           if (result.isConfirmed) {
             await axios.post(
-              `http://194.163.40.231:8080/Medicine/delete-By/`,
+              `/Medicine/delete-By/`,
               { medicine_id, client_id },
               {
                 headers: {

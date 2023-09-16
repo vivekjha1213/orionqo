@@ -43,7 +43,7 @@ class HProfile extends Component {
     if (access) {
       this.setState({ access_token: access }, () => {
         this.setState({ client_id: id }, () => {
-          fetch(`http://194.163.40.231:8080/Hospital/list/${this.state.client_id}/`, {
+          fetch(`/Hospital/list/${this.state.client_id}/`, {
             headers: {
               Authorization: `Bearer ${this.state.access_token}`,
             },
@@ -147,7 +147,7 @@ class HProfile extends Component {
             formData.append("profile_image", this.state.profile);
         }
     
-        axios.put(`http://194.163.40.231:8080/Hospital/update/${this.state.client_id}/`, formData, {
+        axios.put(`/Hospital/update/${this.state.client_id}/`, formData, {
             headers: {
                 Authorization: `Bearer ${this.state.access_token}`,
                 'Content-Type': 'multipart/form-data',

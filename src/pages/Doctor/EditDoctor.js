@@ -87,7 +87,7 @@ class EditDoctor extends Component {
       if (id) {
         this.setState({ client_id: id, access_token: access });
   
-        const response = await fetch(`http://194.163.40.231:8080/Doctor/details-By/`, {
+        const response = await fetch(`/Doctor/details-By/`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -202,7 +202,7 @@ class EditDoctor extends Component {
     // Use the correct key 'image' here
   
     try {
-      const response = await axios.put(`http://194.163.40.231:8080/Doctor/Updated/`, formData, {
+      const response = await axios.put(`/Doctor/Updated/`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data', // Use 'multipart/form-data' for form data
           'Authorization': `Bearer ${access_token}`,

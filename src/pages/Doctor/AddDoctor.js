@@ -14,19 +14,20 @@ class AddDoctor extends Component {
         { title: "Forms", link: "#" },
         { title: "Form Mask", link: "#" },
       ],
-        first_name: '',
-        last_name: '',
-        email: '',
-        contact_number: '',
-        specialty: '',
-        qualifications: '',
-        address: '',
-        gender: '',
-        date_of_birth: '',
-        doctor_id: '',
-        department: '',
-        client:"",
-        access_token:"",
+      first_name: '',
+      last_name: '',
+      email: '',
+      contact_number: '',
+      specialty: '',
+      qualifications: '',
+      address: '',
+      gender: '',
+      date_of_birth: '',
+      doctor_id: '',
+      department: '',
+      profile_image: null,
+      client: "",
+      access_token: "",
 
     };
   }
@@ -47,7 +48,11 @@ class AddDoctor extends Component {
       [e.target.name]: e.target.value,
     });
   };
-
+  handleProfileImageChange = (e) => {
+    this.setState({
+      profile_image: e.target.files[0], // Store the selected file
+    });
+  };
   // handleFileChange = (e) => {
   //   const file = e.target.files[0];
   //   // Check if the selected file is not null and it's an instance of File
@@ -81,7 +86,7 @@ class AddDoctor extends Component {
   //     client,
   //   } = this.state;
 
-    
+
 
   //   try {
   //     const response = await fetch("http://194.163.40.231:8080/Doctor/register/", {
@@ -131,15 +136,16 @@ class AddDoctor extends Component {
       address,
       gender,
       date_of_birth,
+      profile_image,
       // Use the correct key 'image' here
       department,
       client,
       access_token,
 
     } = this.state;
-  
+
     try {
-      const response = await axios.post("http://194.163.40.231:8080/Doctor/register/", {
+      const response = await axios.post("/Doctor/register/", {
         first_name,
         last_name,
         gender,
@@ -158,12 +164,12 @@ class AddDoctor extends Component {
 
         },
       });
-  
-      if ( response.data.message) {
+
+      if (response.data.message) {
         toast.success(response.data.message);
         // window.alert(response.data.message);
-      } 
-      
+      }
+
     } catch (error) {
       toast.error("Something went wrong");
       // Handle any network or other errors here
@@ -182,6 +188,7 @@ class AddDoctor extends Component {
       gender,
       date_of_birth,
       department,
+      profile_image,
     } = this.state;
     return (
       <React.Fragment>
@@ -197,7 +204,7 @@ class AddDoctor extends Component {
                         <Col md="4">
                           <div className="mb-3 position-relative">
                             <Label className="form-label" htmlFor="validationTooltip01">First Name</Label>
-                            <Input type="text" className="form-control" id="validationTooltip01" value={first_name} name="first_name" placeholder="First Name" onChange={this.handleChange} required/>
+                            <Input type="text" className="form-control" id="validationTooltip01" value={first_name} name="first_name" placeholder="First Name" onChange={this.handleChange} required />
 
                             <div className="valid-tooltip">
                               Looks good!
@@ -216,8 +223,19 @@ class AddDoctor extends Component {
                         </Col>
                         <Col md="4">
                           <div className="mb-3 position-relative">
+                            <Label className="form-label" htmlFor="validationTooltip04">Profile Image</Label>
+                            <Input type="file" className="form-control" id="validationTooltip06" name="profile_image" placeholder="Profile Image" onChange={this.handleProfileImageChange} required />
+                            <div className="valid-tooltip">
+                              Looks good!
+                            </div>
+                          </div>
+                        </Col>
+                        </Row>
+                        <Row>
+                        <Col md="4">
+                          <div className="mb-3 position-relative">
                             <Label className="form-label" htmlFor="validationTooltip01">Email</Label>
-                            <Input type="text" value={email} className="form-control" id="validationTooltip01" name="email" placeholder="Email" onChange={this.handleChange} required/>
+                            <Input type="text" value={email} className="form-control" id="validationTooltip01" name="email" placeholder="Email" onChange={this.handleChange} required />
 
                             <div className="valid-tooltip">
                               Looks good!
@@ -252,7 +270,11 @@ class AddDoctor extends Component {
 
                           </div>
                         </Col>
-                        <Col md="4">
+                       
+                      </Row>
+
+                      <Row>
+                      <Col md="4">
                           <div className="mb-3 position-relative">
                             <Label className="form-label" htmlFor="validationTooltip02">Department</Label>
                             <Input type="text" value={department} className="form-control" id="validationTooltip02" name="department" placeholder="Department" onChange={this.handleChange} required />
@@ -261,10 +283,7 @@ class AddDoctor extends Component {
                             </div>
                           </div>
                         </Col>
-                      </Row>
-
-                      <Row>
-                      <Col md="4">
+                        <Col md="4">
                           <div className="mb-3 position-relative">
                             <Label className="form-label" htmlFor="validationTooltip02">Qualifications</Label>
                             <Input type="text" value={qualifications} className="form-control" id="validationTooltip02" name="qualifications" placeholder="Qualifications" onChange={this.handleChange} required />
@@ -285,7 +304,11 @@ class AddDoctor extends Component {
 
                           </div>
                         </Col>
-                        <Col md="4">
+                        
+                      </Row>
+
+                      <Row>
+                      <Col md="4">
                           <div className="mb-3 position-relative">
                             <Label className="form-label" htmlFor="validationTooltip04">Date Of Birth</Label>
                             <Input type="text" value={date_of_birth} className="form-control" id="validationTooltip04" name="date_of_birth" placeholder="Date Of Birth(format i.e. yyyy-mm-dd)" onChange={this.handleChange} required />
@@ -294,13 +317,10 @@ class AddDoctor extends Component {
                             </div>
                           </div>
                         </Col>
-                      </Row>
-
-                      <Row>
-                        <Col md="12">
+                        <Col md="8">
                           <div className="mb-3 position-relative">
                             <Label className="form-label" htmlFor="validationTooltip04">Address</Label>
-                            <Input type="text" value={address} className="form-control" id="validationTooltip04" name="address" placeholder="Address" onChange={this.handleChange} required/>
+                            <Input type="text" value={address} className="form-control" id="validationTooltip04" name="address" placeholder="Address" onChange={this.handleChange} required />
                             <div className="valid-tooltip">
                               Looks good!
                             </div>
@@ -308,7 +328,7 @@ class AddDoctor extends Component {
                         </Col>
                       </Row>
                       <Col md="12" className="text-center">
-                        <Button  color="primary" type="submit">Submit form</Button>
+                        <Button color="primary" type="submit">Submit form</Button>
                       </Col>
                     </Form>
                   </CardBody>

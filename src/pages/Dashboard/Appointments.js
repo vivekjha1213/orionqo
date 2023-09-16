@@ -61,7 +61,7 @@ class Appointments extends Component {
                  
                } = this.state;
            
-            const response = await fetch(`http://194.163.40.231:8080/Appointment/All/`, {
+            const response = await fetch(`/Appointment/All/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json", // Set the content type to JSON
@@ -96,7 +96,7 @@ class Appointments extends Component {
 
         if (confirmDelete) {
             try {
-                const response = await fetch(`http://194.163.40.231:8080/Appointment/cancelled/`, {
+                const response = await fetch(`/Appointment/cancelled/`, {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",'Authorization': `Bearer ${access_token}`,

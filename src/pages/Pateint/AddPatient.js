@@ -44,7 +44,23 @@ class AddPatient extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
-        const { first_name,
+        const {
+          first_name,
+          last_name,
+          email,
+          contact_number,
+          age,
+          date_of_birth,
+          gender,
+          address,
+          medical_history,
+          client,
+          access_token,
+        } = this.state;
+      
+        try {
+          const response = await axios.post("/Patient/register/", {
+            first_name,
             last_name,
             email,
             contact_number,
@@ -53,43 +69,32 @@ class AddPatient extends Component {
             gender,
             address,
             medical_history,
-        client,access_token,
-    } = this.state;
-        try {
-            const response = await fetch("http://194.163.40.231:8080/Patient/register/", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    'Authorization': `Bearer ${access_token}`
-
-                },
-                body: JSON.stringify({
-                    first_name,
-                    last_name,
-                    email,
-                    contact_number,
-                    age,
-                    date_of_birth,
-                    gender,
-                    address,
-                    medical_history,
-                    client,
-                }),
-            });
-
-            const data = await response.json();
-
-            if (data.message && data.success) {
-                window.alert(data.message);
+            client,
+          }, {
+            headers: {
+              "Content-Type": "application/json",
+              'Authorization': `Bearer ${access_token}`,
             }
+          });
+      
+          const data = response.data;
+      
+          if (data.message && data.success) {
+            toast.success(data.message);
+          } else {
+            throw new Error("Something went wrong");
+          }
         } catch (error) {
-            if (error.message) {
-                window.alert(error.message);
-            } else {
-                window.alert("Something went wrong");
-            }
+          console.error("Error:", error);
+      
+          if (error.response && error.response.data && error.response.data.message) {
+            toast.error(error.response.data.message);
+          } else {
+            toast.error("Something went wrong");
+          }
         }
-    };
+      };
+      
 
     render() {
         return (

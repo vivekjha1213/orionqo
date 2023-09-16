@@ -69,7 +69,7 @@ class Prescriptions extends Component {
         try {
             const { client_id } = this.state;
             const response = await axios.post(
-                `http://194.163.40.231:8080/Prescription/details/`,
+                `/Prescription/details/`,
                 { client_id }, // Wrap client_id in an object
                 {
                     headers: { "Content-Type": "application/json",'Authorization': `Bearer ${acces}`
@@ -118,7 +118,7 @@ class Prescriptions extends Component {
       deletePrescription = async (prescription_id, client_id, access_token) => {
         try {
           const response = await axios.post(
-            `http://194.163.40.231:8080/Prescription/delete-By/`,
+            `/Prescription/delete-By/`,
             { prescription_id, client_id },
             {
               headers: {

@@ -16,7 +16,6 @@ import Dashboard from "../pages/Dashboard/index";
 import AddDoctor from "../pages/Doctor/AddDoctor";
 import Doctors from "../pages/Doctor/Doctors";
 import EditDoctor from "../pages/Doctor/EditDoctor";
-import Holidays from "../pages/Doctor/Holidays";
 //Patient
 import Patients from "../pages/Pateint/Patients";
 import AddPatient from "../pages/Pateint/AddPatient";
@@ -25,12 +24,8 @@ import EditPatient from "../pages/Pateint/EditPatient";
 import Appointments from "../pages/Appointments/Appointments";
 import EditAppointment from "../pages/Appointments/EditAppointment";
 import AddAppointment from "../pages/Appointments/AddAppointment";
-//import AppointmentList from "../pages/Appointments/AppointmentList";
 
-//BookingSlot
-import BookingSlotList from "../pages/BookingSlot/BookingSlotList";
-import AddBookingSlot from "../pages/BookingSlot/AddBookingSlot";
-import EditBooking from "../pages/BookingSlot/EditBooking";
+
 //Dashboard
 import SuperDashboard from "../pages/SuperDashboard";
 //Hospitals
@@ -75,15 +70,12 @@ import EditPayment from "../pages/Payments/EditPayment";
 import ListBed from "../pages/Beds/ListBed";
 //Profile
 import HProfile from "../pages/Profile/HProfile";
-import Doctorlist from "../pages/Doctor/DoctorList";
 
 const authProtectedRoutes = [
     // Doctors
 	{ path: "/doctors", component: Doctors},
 	{ path: "/add-doctor", component: AddDoctor},
 	{ path:"/edit-doctor/:doctor_id", component:EditDoctor },
-	{ path: "/holidays", component: Holidays},
-	{ path: "/list-doctors", component: Doctorlist},
 	//Pateints
 	{ path: "/patients", component: Patients},
 	{ path: "/add-patient", component: AddPatient},
@@ -92,10 +84,6 @@ const authProtectedRoutes = [
 	{ path: "/appointments", component: Appointments},
 	{ path: "/edit-appointment/:appointment_id", component: EditAppointment},
 	{ path: "/add-appointment", component: AddAppointment},
-    //Booking Slot
-	{ path: "/booking-slot-list", component: BookingSlotList},
-	{ path: "/add-booking-slot", component: AddBookingSlot},
-	{ path: "/edit-booking-slot/:booking_id", component: EditBooking},
 	//Dashboard
 	{ path: "/admin-dashboard", component: SuperDashboard},
 

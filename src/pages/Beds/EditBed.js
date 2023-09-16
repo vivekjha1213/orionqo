@@ -36,7 +36,7 @@ class EditBed extends Component {
                     this.setState({ access_token: access });
 
                     // 2. Make the API call.
-                    fetch(`http://194.163.40.231:8080/Bed/details-By/`, {
+                    fetch(`/Bed/details-By/`, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -102,7 +102,7 @@ class EditBed extends Component {
         };
     
         try {
-          const response = await axios.put(`http://194.163.40.231:8080/Bed/Updated/`, formData, {
+          const response = await axios.put(`/Bed/Updated/`, formData, {
             headers: {
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${access_token}`,

@@ -50,7 +50,7 @@ class AddMedicine extends Component {
     } = this.state;
 
     try {
-      const response = await axios.post(`http://194.163.40.231:8080/Medicine/register/`, {
+      const response = await axios.post(`/Medicine/register/`, {
         medicine_name,
         manufacturer,
         unit_price,

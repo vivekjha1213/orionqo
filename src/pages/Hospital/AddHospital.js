@@ -63,7 +63,7 @@ class AddHospital extends Component {
         formData.append("user_type", user_type);
 
         try {
-            const response = await fetch("http://194.163.40.231:8080/Hospital/add/", {
+            const response = await fetch("/Hospital/add/", {
                 method: "POST",
                 headers: {
                     'Authorization': `Bearer ${this.state.access_token}`

@@ -79,7 +79,7 @@ class Payments extends Component {
         try {
             const { client_id } = this.state;
             const response = await axios.post(
-                `http://194.163.40.231:8080/Payment/details/`,
+                `/Payment/details/`,
                 { client_id }, // Wrap client_id in an object
                 {
                     headers: { "Content-Type": "application/json",'Authorization': `Bearer ${acces}`
@@ -131,7 +131,7 @@ class Payments extends Component {
       
       deletePayment = async (payment_id, client_id, access_token) => {
         try {
-          const response = await fetch(`http://194.163.40.231:8080/Payment/delete-By/`, {
+          const response = await fetch(`/Payment/delete-By/`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

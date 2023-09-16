@@ -63,7 +63,7 @@ class Departments extends Component {
 
         try {
             const { client_id } = this.state;
-            const response = await axios.post(`http://194.163.40.231:8080/Department/details/`, { client_id }, {
+            const response = await axios.post(`/Department/details/`, { client_id }, {
                 headers: {
                     "Content-Type": "application/json", // Set the content type to JSON
                     'Authorization': `Bearer ${acces}`,
@@ -106,7 +106,7 @@ class Departments extends Component {
             
         };
         try {
-            const response = await fetch(`http://194.163.40.231:8080/Department/Updated/`, {
+            const response = await fetch(`/Department/Updated/`, {
                 method: "PUT",
                 headers: {
                     'Content-Type': 'application/json',
@@ -136,7 +136,7 @@ class Departments extends Component {
         } = this.state;
         const client = "";
         try {
-            const response = await fetch(`http://194.163.40.231:8080/Department/add/`, {
+            const response = await fetch(`/Department/add/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -192,7 +192,7 @@ class Departments extends Component {
             //     alert("Deletion failed");
             // }
             // const department_id="";
-            axios.post(`http://194.163.40.231:8080/Department/deleteBy/`,
+            axios.post(`/Department/deleteBy/`,
                 { department_id: id, client_id },
                 {
                     headers: {

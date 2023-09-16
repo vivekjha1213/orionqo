@@ -53,7 +53,7 @@ class AddLabTest extends Component {
         } = this.state;
       
         try {
-          const response = await axios.post("http://194.163.40.231:8080/LabTest/add/", {
+          const response = await axios.post("/LabTest/add/", {
             patient,
             doctor,
             test_name,

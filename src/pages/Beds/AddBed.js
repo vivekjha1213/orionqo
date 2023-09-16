@@ -46,7 +46,7 @@ class AddBed extends Component {
         } = this.state;
     
         try {
-          const response = await axios.post("http://194.163.40.231:8080/Bed/register/", {
+          const response = await axios.post("/Bed/register/", {
             department,
             is_occupied,
             client,

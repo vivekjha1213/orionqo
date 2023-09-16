@@ -25,7 +25,7 @@ class ForgetPasswordPage extends Component {
 
     try {
         const response = await axios.post(
-            "http://194.163.40.231:8080/Hospital/send-reset-password-email/",
+            "/Hospital/send-reset-password-email/",
             {
                 email: email,
             },

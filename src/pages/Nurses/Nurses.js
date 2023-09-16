@@ -79,7 +79,7 @@ class Nurses extends Component {
             const { client_id,sortOrder } = this.state;
 
             const response = await axios.post(
-                `http://194.163.40.231:8080/Nurse/details/`,
+                `/Nurse/details/`,
                 { client_id },
                 {
                     headers: {
@@ -136,7 +136,7 @@ class Nurses extends Component {
       deleteNurse = async (nurse_id, client_id, access_token) => {
         try {
           const response = await axios.post(
-            `http://194.163.40.231:8080/Nurse/delete-By/`,
+            `/Nurse/delete-By/`,
             { nurse_id, client_id },
             {
               headers: {

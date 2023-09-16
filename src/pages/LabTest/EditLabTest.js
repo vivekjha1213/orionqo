@@ -38,7 +38,7 @@ class EditLabTest extends Component {
           
 
         try {
-            const response = await fetch(`http://194.163.40.231:8080/LabTest/details-By/`,{
+            const response = await fetch(`/LabTest/details-By/`,{
                 method:"POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -91,7 +91,7 @@ class EditLabTest extends Component {
         } = this.state;
       
         try {
-          const response = await axios.put(`http://194.163.40.231:8080/LabTest/Updated/`, {
+          const response = await axios.put(`/LabTest/Updated/`, {
             patient,
             doctor,
             test_name,

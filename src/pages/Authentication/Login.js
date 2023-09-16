@@ -29,7 +29,7 @@ class Login extends Component {
         const { email, password } = this.state;
     
         try {
-            const response = await axios.post("http://194.163.40.231:8080/Hospital/login/", {
+            const response = await axios.post("/Hospital/login/", {
                 email,
                 password
             });

@@ -47,7 +47,7 @@ class AddInvoice extends Component {
         } = this.state;
       
         try {
-          const response = await axios.post("http://194.163.40.231:8080/Invoice/add/", {
+          const response = await axios.post("/Invoice/add/", {
             patient,
             invoice_date,
             total_amount,

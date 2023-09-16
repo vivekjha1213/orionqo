@@ -62,7 +62,7 @@ class Appointments extends Component {
                  
                } = this.state;
            
-            const response = await fetch(`http://194.163.40.231:8080/Appointment/All/`, {
+            const response = await fetch(`/Appointment/All/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json", // Set the content type to JSON
@@ -102,7 +102,7 @@ class Appointments extends Component {
       
           if (result.isConfirmed) {
             const response = await axios.put(
-              `http://194.163.40.231:8080/Appointment/cancelled/`,
+              `/Appointment/cancelled/`,
               {
                 appointment_id,
                 client_id,

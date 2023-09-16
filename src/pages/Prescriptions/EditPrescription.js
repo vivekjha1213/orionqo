@@ -36,7 +36,7 @@ class EditPrescription extends Component {
 
 
         try {
-            const response = await fetch(`http://194.163.40.231:8080/Prescription/details-By/`, {
+            const response = await fetch(`/Prescription/details-By/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -95,7 +95,7 @@ class EditPrescription extends Component {
         };
     
         try {
-          const response = await axios.put(`http://194.163.40.231:8080/Prescription/Updated/`, formData, {
+          const response = await axios.put(`/Prescription/Updated/`, formData, {
             headers: {
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${access_token}`,

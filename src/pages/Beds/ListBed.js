@@ -55,7 +55,7 @@ class ListBed extends Component {
         try {
             const { client_id } = this.state;
             const response = await axios.post(
-                `http://194.163.40.231:8080/Bed/detail/`,
+                `/Bed/detail/`,
                 { client_id },
                 {
                     headers: { "Content-Type": "application/json" },
@@ -76,7 +76,7 @@ class ListBed extends Component {
         } = this.state;
         if (confirmDelete) {
             try {
-                const response = await fetch(`http://194.163.40.231:8080/Bed/deleteBy/`, {
+                const response = await fetch(`/Bed/deleteBy/`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

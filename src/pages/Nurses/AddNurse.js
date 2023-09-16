@@ -55,7 +55,7 @@ class AddNurse extends Component {
     } = this.state;
 
     try {
-      const response = await axios.post("http://194.163.40.231:8080/Nurse/add/", {
+      const response = await axios.post("/Nurse/add/", {
         first_name,
         last_name,
         contact_number,
