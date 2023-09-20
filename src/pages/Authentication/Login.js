@@ -10,7 +10,7 @@ import logodark from "../../assets/images/logo-dark.png";
 import logolight from "../../assets/images/logo-light.png";
 import { css } from "@emotion/react";
 
-import drfApi from './drfServer';
+import {drfLogin} from './drfServer';
 
 
 class Login extends Component {
@@ -35,11 +35,8 @@ class Login extends Component {
 
         try {
             this.setState({ isLoading: true }); // Start loading
-            const response = await drfApi.post("/Hospital/login/", {
-          
-                email,
-                password
-            });
+            const response = await drfLogin({ email,
+                password});
 
             const data = response.data;
 
@@ -104,7 +101,7 @@ class Login extends Component {
                                                         </div>
 
                                                         <h4 className="font-size-18 mt-4">Welcome Back !</h4>
-                                                        <p className="text-muted">Sign in to continue to Dtroffle.</p>
+                                                        <p className="text-muted">Sign in to continue to orionqo.</p>
                                                     </div>
 
                                                     {this.props.loginError && this.props.loginError ? <Alert color="danger">{this.props.loginError}</Alert> : null}
@@ -159,7 +156,7 @@ class Login extends Component {
 
                                                     <div className="mt-5 text-center">
                                                         {/* <p>Don't have an account ? <Link to="/register" className="fw-medium text-primary"> Register </Link> </p> */}
-                                                        <p>© 2023 Dtroffle. Crafted with <i className="mdi mdi-heart text-danger"></i> by Dtroffle</p>
+                                                        <p>© 2023 orionqo. Crafted with <i className="mdi mdi-heart text-danger"></i> by orionqo</p>
                                                     </div>
                                                 </div>
                                             </Col>
