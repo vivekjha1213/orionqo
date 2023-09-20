@@ -9,7 +9,11 @@ import { ClipLoader } from "react-spinners"; // Import ClipLoader from react-spi
 import logodark from "../../assets/images/logo-dark.png";
 import logolight from "../../assets/images/logo-light.png";
 import { css } from "@emotion/react";
+<<<<<<< HEAD
 import drfApi from './drfServer';
+=======
+
+>>>>>>> origin/main
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -32,7 +36,11 @@ class Login extends Component {
 
         try {
             this.setState({ isLoading: true }); // Start loading
+<<<<<<< HEAD
             const response = await drfApi.post("/Hospital/login/", {
+=======
+            const response = await axios.post("/Hospital/login/", {
+>>>>>>> origin/main
                 email,
                 password
             });
