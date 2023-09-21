@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "reactstrap";
 
+
 //Import Breadcrumb
 import Breadcrumbs from '../../components/Common/Breadcrumb';
 
 //Import Components
+import FeedbackList from "./FeedbackList";
+
 import Counter3 from "./Counter3";
 import RevenueAnalytics from "./RevenueAnalytics";
 import SalesAnalytics from "./SalesAnalytics";
@@ -32,61 +35,24 @@ class SuperDashboard extends Component {
             ]
         }
     }
-
     render() {
         return (
             <React.Fragment>
                 <div className="page-content">
                     <Container fluid>
-
-                    <Breadcrumbs title="Dashboard" breadcrumbItems={this.state.breadcrumbItems} />
+                        <Breadcrumbs title="Dashboard" breadcrumbItems={this.state.breadcrumbItems} />
                         <Row>
                             <Col xl={12}>
                                 <Row>
                                     <Counter3 reports={this.state.reports} />
                                 </Row>
-                                {/* <Row>
-                                    <Counter2 reports={this.state.reports} />
-                                </Row> */}
-                                {/* revenue Analytics */}
-                               {/* <RevenueAnalytics />*/}
-                               <Row>
-                               {/* <Appointments/> */}
-                               </Row>
+                                {< FeedbackList reports={this.state.reports}/>}
+                              
                             </Col>
-
-                           {/* <Col xl={4}>
-                                {/* sales Analytics */}
-                               {/* <SalesAnalytics/>
-
-                                {/* earning reports */}
-                             { /* { <EarningReports/>}
-                            </Col> 
-                            */}
+                            {/* Other components */}
                         </Row>
-                        
-                      { /* <Row>
-                            {/* sources */}
-                        {/*    <Sources/>
-
-                            {/* recent activity */}
-                         {/*  <RecentlyActivity/>
-
-                            {/* revenue by locations */}
-                           {/*} <RevenueByLocations/>
-                        </Row>
-
-                      {/*  <Row>
-                            {/* chat box */}
-                           {/* <ChatBox/>
-
-                            {/* latest transactions */}
-                          {/*  <LatestTransactions/>
-                       {/* </Row>*/}
-
-                    </Container> 
-               
-                 </div>
+                    </Container>
+                </div>
             </React.Fragment>
         );
     }
