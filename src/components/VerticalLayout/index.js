@@ -69,7 +69,7 @@ class Layout extends Component {
     currentage = currentage.replaceAll("-" , " ");
     
     document.title =
-      currentage + " | Nazox - Responsive Bootstrap 5 Admin Dashboard";
+      currentage + " | orionqo ";
       
     if (this.props.leftSideBarTheme) {
       this.props.changeSidebarTheme(this.props.leftSideBarTheme);

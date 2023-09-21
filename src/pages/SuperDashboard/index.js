@@ -25,7 +25,7 @@ class SuperDashboard extends Component {
         super(props);
         this.state = {
             breadcrumbItems : [
-                { title : "Nazox", link : "/" },
+                { title : "orionqo", link : "/" },
                 { title : "Dashboard", link : "#" },
             ],
             reports : [

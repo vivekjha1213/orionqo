@@ -35,12 +35,11 @@ class FeedBack extends Component {
 
         try {
             const response = await fetch(`/Feedback/list/`, {
-                method: "GET", // Use "GET" to retrieve data
+                method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                     'Authorization': `Bearer ${access_token}`,
                 },
-                // No need to send a body for a "GET" request
             });
 
             if (!response.ok) {
@@ -70,8 +69,9 @@ class FeedBack extends Component {
         const columns = [
             {
                 dataField: 'id',
-                text: 'SNo', // Change the column header to "SNo"
-                formatter: (cell, row, rowIndex) => rowIndex + 1, // Add custom formatter
+                text: 'SNo',
+                formatter: (cell, row, rowIndex) => rowIndex + 1,
+                headerStyle: { width: '5%' },
             },
             { dataField: 'email', text: 'Email', sort: true },
             { dataField: 'notes', text: 'Notes' },
@@ -80,7 +80,7 @@ class FeedBack extends Component {
         return (
             <React.Fragment>
                 <Container fluid>
-                    <h5>Client Feedbacks</h5>
+                    <h5 className="mb-4">Client Feedbacks</h5>
                     <Row>
                         <Col>
                             <Card>
@@ -90,6 +90,13 @@ class FeedBack extends Component {
                                             keyField="id"
                                             data={data}
                                             columns={columns}
+                                            bootstrap4
+                                            bordered={false}
+                                            striped
+                                            hover
+                                            condensed
+                                            wrapperClasses="table-responsive"
+                                            classes="table table-nowrap table-hover"
                                         />
                                     </div>
                                 </CardBody>
@@ -101,5 +108,4 @@ class FeedBack extends Component {
         );
     }
 }
-
 export default withRouter(FeedBack);

@@ -85,7 +85,7 @@ class PasswordReset extends Component {
                                                         </div>
                                                         <div>
                                                             <h4 className="font-size-18 mt-4">Reset Password</h4>
-                                                            <p className="text-muted">Reset your password to Dtroffle.</p>
+                                                            <p className="text-muted">Reset your password to orionqo.</p>
                                                         </div>
                                                     </div>
 
@@ -159,7 +159,7 @@ class PasswordReset extends Component {
                                                                 Log in
                                                             </Link>{" "}
                                                         </p>
-                                                        <p>© 2023 Dtroffle. Crafted with <i className="mdi mdi-heart text-danger"></i> by Dtroffle</p>
+                                                        <p>© 2023 orionqo. Crafted with <i className="mdi mdi-heart text-danger"></i> by orionqo</p>
                                                     </div>
                                                 </div>
                                             </Col>
