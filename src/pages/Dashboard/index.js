@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css'; // Import the CSS file for styli
 import Breadcrumbs from '../../components/Common/Breadcrumb';
 
 //Import Components
+import FeedbackAdd from "./FeedbackAdd"
 import Counter1 from "./Counter1";
 import Counter2 from "./Counter2";
 import RevenueAnalytics from "./RevenueAnalytics";
@@ -83,7 +84,7 @@ class Dashboard extends Component {
                             {/* latest transactions */}
                           {/*  <LatestTransactions/>
                        {/* </Row>*/}
-
+                             <FeedbackAdd /> {/* Add the FeedbackPopup component */}
                     </Container> 
                
                  </div>

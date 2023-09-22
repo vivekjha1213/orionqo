@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Autosuggest from "react-autosuggest";
 
+
+
 import {
     Row, Col, Card, CardBody, FormGroup, Button, Label, Input, Container, InputGroup, Form,
 } from "reactstrap";
@@ -98,7 +100,6 @@ class HProfile extends Component {
        
     };
     // Function to handle form input changes
-
 
     // Function to submit edited data to the API
     // handleSubmit = (e) => {
