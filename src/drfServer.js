@@ -8,15 +8,9 @@ export const drfLogin = async (body) => {
 
 
 
-export const drfFeedback = async (body) => {
-  return await axios.post(`${MAINURL}Feedback/add/`, body);
-};
-
-
 //  for reset password...
-
 export const drfForgetPassword = async (body) => {
-    return await axios.post(`${MAINURL}/Hospital/send-reset-password-email/`, body);
+    return await axios.post(`${MAINURL}Hospital/send-reset-password-email/`, body);
   };
 
 
@@ -44,6 +38,10 @@ export const drfDelete = async (id) => {
        
 };
 
+
+export const drfFeedback = async (body) => {
+  return await axios.post(`${MAINURL}Feedback/add/`, body);
+};
 
 
 // for auth...
